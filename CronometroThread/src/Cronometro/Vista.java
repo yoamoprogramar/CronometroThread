@@ -1,13 +1,15 @@
 package Cronometro;
 
+import java.awt.Color;
 import java.awt.Font;
 import javax.swing.*;
+import javax.swing.border.LineBorder;
 import org.netbeans.lib.awtextra.*;
 
 public class Vista extends JFrame {
 
     JLabel min, seg, p;
-    JLabel lblMinutos,lblSegundos,lblMilis;
+    JLabel lblCronos;
     JButton btnStart, btnReset, btnStop;
 
     public Vista() {
@@ -17,9 +19,13 @@ public class Vista extends JFrame {
         this.setSize(400, 200);
         this.setResizable(false);   
         
-        lblMinutos = new JLabel("");
-        lblMinutos.setFont(new Font("Arial", 0, 15));
-        this.getContentPane().add(lblMinutos, new AbsoluteConstraints(20, 60, 10, 10));
+        lblCronos = new JLabel("");
+        lblCronos.setFont(new Font("Arial Black", 0, 40));
+        lblCronos.setForeground(Color.white);
+        lblCronos.setBackground(Color.red);
+        lblCronos.setOpaque(true);
+        lblCronos.setBorder(new LineBorder(Color.BLACK,3));
+        this.getContentPane().add(lblCronos, new AbsoluteConstraints(30, 30, 250, 100));
         btnStart = new JButton("Start");
         this.getContentPane().add(btnStart, new AbsoluteConstraints(300, 30, 70, 20));
         btnStop = new JButton("Stop");
